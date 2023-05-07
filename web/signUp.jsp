@@ -18,7 +18,7 @@
         <div class="form-floating mt-3">
             <input type="text" class="form-control" id="full_name" name="full_name" placeholder="name@example.com"
                    required>
-            <label for="full_name">Email address</label>
+            <label for="full_name">Full Name</label>
         </div>
         <div class="form-floating mt-3">
             <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
