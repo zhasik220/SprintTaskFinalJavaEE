@@ -17,18 +17,17 @@ import java.util.ArrayList;
 public class NewsPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       if (request.getSession().getAttribute("currentUser")!=null) {
-           int id = Integer.parseInt(request.getParameter("id"));
-           New oneNew = DBConnection.getNew(id);
-           request.setAttribute("oneNew", oneNew);
-           ArrayList<NewCategory> categoryArrayList = DBConnection.GetCategories();
-           request.setAttribute("categoryList", categoryArrayList);
-           ArrayList<Comment> comments=DBConnection.getCommentList(oneNew.getId());
-           request.setAttribute("news_comments",comments);
-           request.getRequestDispatcher("/news_page.jsp").forward(request, response);
-       }
-       else {
-           response.sendRedirect("/login");
-       }
+        if (request.getSession().getAttribute("currentUser") != null) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            New oneNew = DBConnection.getNew(id);
+            request.setAttribute("oneNew", oneNew);
+            ArrayList<NewCategory> categoryArrayList = DBConnection.GetCategories();
+            request.setAttribute("categoryList", categoryArrayList);
+            ArrayList<Comment> comments = DBConnection.getCommentList(oneNew.getId());
+            request.setAttribute("news_comments", comments);
+            request.getRequestDispatcher("/news_page.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("/login");
+        }
     }
 }

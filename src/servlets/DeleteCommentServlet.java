@@ -13,10 +13,9 @@ import java.io.IOException;
 public class DeleteCommentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id= Integer.parseInt(request.getParameter("comment_id"));
-        String news_id=request.getParameter("news_id");
-        System.out.println("DELETED"+news_id+" com_id "+id);
+        int id = Integer.parseInt(request.getParameter("comment_id"));
+        String news_id = request.getParameter("news_id");
         DBConnection.deleteComment(id);
-        response.sendRedirect("/news_page?id="+news_id);
+        response.sendRedirect("/news_page?id=" + news_id);
     }
 }

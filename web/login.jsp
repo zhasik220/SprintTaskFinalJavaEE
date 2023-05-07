@@ -3,10 +3,10 @@
 <html>
 <head>
     <title>HomePage</title>
-    <%@include file="head.jsp"%>
+    <%@include file="head.jsp" %>
 </head>
 <body>
-<%@include file="navbar.jsp"%>
+<%@include file="navbar.jsp" %>
 <div class="container">
     <form action="/login" method="post">
         <div class="justify-content-center d-flex">
@@ -25,7 +25,7 @@
         </div>
         <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign in</button>
 
-        <h2 class="mt-2">Don't have account? <a href="/signup">Sign Up</a> </h2>
+        <h2 class="mt-2">Don't have account? <a href="/signup">Sign Up</a></h2>
     </form>
 </div>
 </body>

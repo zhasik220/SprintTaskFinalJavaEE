@@ -16,26 +16,24 @@ import java.util.ArrayList;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getSession().getAttribute("currentUser")!=null){
+        if (request.getSession().getAttribute("currentUser") != null) {
             response.sendRedirect("/");
-        }
-        else {
-            request.getRequestDispatcher("login.jsp").forward(request,response);
+        } else {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email=request.getParameter("email");
-        String password=request.getParameter("password");
-        User user=DBConnection.getUser(email);
-        if (user!=null && user.getPassword().equals(password)){
-            HttpSession session=request.getSession();
-            session.setAttribute("currentUser",user);
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        User user = DBConnection.getUser(email);
+        if (user != null && user.getPassword().equals(password)) {
+            HttpSession session = request.getSession();
+            session.setAttribute("currentUser", user);
             response.sendRedirect("/");
-        }
-        else {
+        } else {
             response.sendRedirect("/login?error");
         }
     }

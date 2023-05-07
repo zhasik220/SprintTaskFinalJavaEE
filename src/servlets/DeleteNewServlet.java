@@ -13,7 +13,7 @@ import java.io.IOException;
 public class DeleteNewServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int id= Integer.parseInt(request.getParameter("news_id"));
+        int id = Integer.parseInt(request.getParameter("news_id"));
         DBConnection.deleteNew(id);
         response.sendRedirect("/");
     }

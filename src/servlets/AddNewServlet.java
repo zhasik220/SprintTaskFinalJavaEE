@@ -17,21 +17,20 @@ public class AddNewServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user= (User) request.getSession().getAttribute("currentUser");
-        if (user!=null && user.getRole_id()==1){
-            request.getRequestDispatcher("addNew.jsp").forward(request,response);
-        }
-        else {
-            request.getRequestDispatcher("/403").forward(request,response);
+        User user = (User) request.getSession().getAttribute("currentUser");
+        if (user != null && user.getRole_id() == 1) {
+            request.getRequestDispatcher("addNew.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("/403").forward(request, response);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String title=request.getParameter("title");
-        int category_id= Integer.parseInt(request.getParameter("category"));
-        String content= request.getParameter("content");
-        New oneNew=new New(title,content,category_id);
+        String title = request.getParameter("title");
+        int category_id = Integer.parseInt(request.getParameter("category"));
+        String content = request.getParameter("content");
+        New oneNew = new New(title, content, category_id);
         DBConnection.addNew(oneNew);
         response.sendRedirect("/addNew");
 

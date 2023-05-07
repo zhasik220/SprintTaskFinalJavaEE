@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import moduls.User;
 
 import java.io.IOException;
+
 @WebServlet(value = "/profile")
 public class ProfileServlet extends HttpServlet {
     @Override

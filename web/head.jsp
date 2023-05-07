@@ -1,5 +1,5 @@
 <%
-    String siteName="BITLAB NEWS";
+    String siteName = "BITLAB NEWS";
 %>
 <link rel="stylesheet" href="css/bootstrap.css">
 <script src="js/bootstrap.js"></script>

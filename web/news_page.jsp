@@ -81,7 +81,7 @@
                     <small class="text-muted"><%=comment.getPost_date()%></small>
                     </div>
                 <%if (currentUser.getId() == comment.getUser().getId() || currentUser.getRole_id() == 1) {
-                    System.out.println(comment.getId());
+
                 %>
                     <div class="btn-group">
                         <div>

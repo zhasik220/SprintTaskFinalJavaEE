@@ -14,21 +14,20 @@ import java.io.IOException;
 public class SignUpServet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("signUp.jsp").forward(request,response);
+        request.getRequestDispatcher("signUp.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String fullName=request.getParameter("full_name");
-        String email=request.getParameter("email");
-        String password=request.getParameter("password");
-        User user =DBConnection.getUser(email);
+        String fullName = request.getParameter("full_name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        User user = DBConnection.getUser(email);
         System.out.println(user);
-        if (DBConnection.getUser(email)==null){
-            DBConnection.addUser(new User(email,password,fullName,2));
+        if (DBConnection.getUser(email) == null) {
+            DBConnection.addUser(new User(email, password, fullName, 2));
             response.sendRedirect("/login");
-        }
-        else {
+        } else {
             response.sendRedirect("/signup?error");
         }
     }

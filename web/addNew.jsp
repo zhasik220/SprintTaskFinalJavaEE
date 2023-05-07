@@ -3,10 +3,10 @@
 <html>
 <head>
     <title>Add New</title>
-    <%@include file="head.jsp"%>
+    <%@include file="head.jsp" %>
 </head>
 <body>
-<%@include file="navbar.jsp"%>
+<%@include file="navbar.jsp" %>
 <div class="container">
     <form action="/addNew" method="post">
         <div class="mb-3">
@@ -27,7 +27,7 @@
             <textarea class="form-control" id="content" rows="8" name="content" required></textarea>
         </div>
         <div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 </div>

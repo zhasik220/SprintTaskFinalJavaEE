@@ -3,10 +3,10 @@
 <html>
 <head>
     <title>HomePage</title>
-    <%@include file="head.jsp"%>
+    <%@include file="head.jsp" %>
 </head>
 <body>
-<%@include file="navbar.jsp"%>
+<%@include file="navbar.jsp" %>
 <div class="container">
     <div class="row text-bg-light border border-opacity-50 rounded-top py-1">
         <h2>Profile Page</h2>
@@ -36,18 +36,16 @@
         <div class="mb-3 row">
             <div class="col-12 d-flex justify-content-end">
                 <div>
-                    <%@include file="updateUserModal.jsp"%>
+                    <%@include file="updateUserModal.jsp" %>
                 </div>
                 <div>
-                    <%@include file="deleteUserModal.jsp"%>
+                    <%@include file="deleteUserModal.jsp" %>
                 </div>
             </div>
         </div>
 
 
-
-
-        </div>
     </div>
+</div>
 </body>
 </html>
