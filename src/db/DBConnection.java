@@ -272,12 +272,11 @@ public class DBConnection {
 
     public static void updateNew(New oneNew) {
         try {
-            PreparedStatement statement = connection.prepareStatement("DELETE n, c FROM news n " +
-                    "INNER JOIN comments c ON n.id = c.news_id WHERE n.id = ?\n");
-            statement.setString(1, oneNew.getTitle());
-            statement.setString(2, oneNew.getContent());
-            statement.setInt(3,oneNew.getCategory_id());
-            statement.setLong(4, oneNew.getId());
+            PreparedStatement statement = connection.prepareStatement
+                    ("UPDATE news SET title=?, content=? WHERE id=?");
+            statement.setString(1,oneNew.getTitle());
+            statement.setString(2,oneNew.getContent());
+            statement.setLong(3,oneNew.getId());
             statement.executeUpdate();
             statement.close();
 
